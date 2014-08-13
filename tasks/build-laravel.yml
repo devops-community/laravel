@@ -1,0 +1,22 @@
+# Find out more about tasks: http://docs.devo.ps/manual/tasks
+
+id: build-laravel
+name: Build Laravel app
+type: task
+
+targets:
+  - laravel
+
+vars:
+  # TODO: specify the domain
+  domain: 
+  workdir: /var/www/{{ domain }}
+
+steps:
+  - run: devops git update
+    options:
+      repo: https://github.com/scotch-io/laravel-angular-comment-app
+      dest: "{{ workdir }}"
+      
+  - run: devops scripts/build-laravel.sh
+
