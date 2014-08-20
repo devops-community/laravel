@@ -22,7 +22,7 @@ services:
 
 configuration:
   php:
-    composer: on
+    composer: true
     memory_limit: 512M
 
   mysql:
@@ -39,11 +39,12 @@ configuration:
     vhosts:
       laravel:
         domain: '{{ domain }}'
-        php: "on"
         webroot: public
+        support: 
+          - php
         routes:
           - uri: '/'
             type: static
           - uri: '~ \.php$'
             type: fastcgi
-            to: "{{ nodes.laravel.configuration.php.fpm.pool.listen }}"
+            to: '{{ nodes.laravel.configuration.php.fpm.pool.listen }}'

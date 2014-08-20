@@ -10,18 +10,18 @@ targets:
 vars:
   workdir: /var/www/laravel
   repo: https://github.com/scotch-io/laravel-angular-comment-app
-  php_run_user: "{{ nodes.laravel.configuration.php.fpm.pool.user }}"
-
-  laravel_db: laravel
-  laravel_user: laravel
-  laravel_pass: "{{ nodes.laravel.configuration.mysql.users.laravel.password }}"
-
 
 steps:
   - run: devops git update
     options:
-      repo: "{{ repo }}"
-      dest: "{{ workdir }}"
+      repo: '{{ repo }}'
+      dest: '{{ workdir }}'
 
   - run: devops scripts/build-laravel.sh
-
+    options:
+      # Those options are available within the script as ENV variables
+      DB: laravel
+      USER: laravel
+      PASS: '{{ nodes.laravel.configuration.mysql.users.laravel.password }}'
+      WORKDIR: '{{ workdir }}'
+      RUN_USER: '{{ nodes.laravel.configuration.php.fpm.pool.user }}'

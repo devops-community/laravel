@@ -1,8 +1,16 @@
 #!/bin/bash
+################
+# Simple build script for a laravel app
+################
 
-WEBFOLDER={{ workdir }}
-PHP_RUN_USER={{ php_run_user }}
+# Loading the environment variables
+WEBFOLDER="$WORKDIR"
+PHP_RUN_USER="$RUN_USER"
+DATABASE="$DB"
+DB_USER="$USER"
+DB_PASS="$PASS"
 
+# Let's work from the web folder
 cd $WEBFOLDER
 
 # Install laravel
@@ -28,9 +36,9 @@ return array(
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => '{{ laravel_db }}',
-            'username'  => '{{ laravel_user }}',
-            'password'  => '{{ laravel_pass }}',
+            'database'  => '$DATABASE',
+            'username'  => '$DB_USER',
+            'password'  => '$DB_PASS',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
