@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WEBFOLDER={{ workdir }}
-PHP_RUN_USER=www-data
+PHP_RUN_USER={{ php_run_user }}
 
 cd $WEBFOLDER
 
@@ -22,36 +22,29 @@ cat > app/config/database.php << EOF
 <?php
 
 return array(
-	'fetch' => PDO::FETCH_CLASS,
-	'default' => 'sqlite',
-	'connections' => array(
-		'sqlite' => array(
-			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
-			'prefix'   => '',
-/*
-		),
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'appdb',
-			'username'  => 'root',
-			'password'  => 'password',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-*/
-		)
-	),
-	'migrations' => 'migrations',
-	'redis' => array(
-		'cluster' => false,
-		'default' => array(
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
-			'database' => 0,
-		),
-	),
+    'fetch' => PDO::FETCH_CLASS,
+    'default' => 'mysql',
+    'connections' => array(
+        'mysql' => array(
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => '{{ laravel_db }}',
+            'username'  => '{{ laravel_user }}',
+            'password'  => '{{ laravel_pass }}',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        )
+    ),
+    'migrations' => 'migrations',
+    'redis' => array(
+        'cluster' => false,
+        'default' => array(
+            'host'     => '127.0.0.1',
+            'port'     => 6379,
+            'database' => 0,
+        ),
+    ),
 );
 
 EOF

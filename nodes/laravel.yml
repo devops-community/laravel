@@ -4,7 +4,7 @@ id: laravel
 name: Laravel node
 type: server
 
-# TODO: Specify the provider details
+# Define the provider details
 provider:
   name:
   size:
@@ -12,20 +12,33 @@ provider:
   image: ubuntu14.04
 
 vars:
-  # TODO: Set the domain name to use
-  domain: 
+  # Define your domain name, '_' will answer to any IP
+  domain: _
 
 services:
   php: '*'
   nginx: '*'
+  mysql: '*'
 
 configuration:
   php:
     composer: on
     memory_limit: 512M
+
+  mysql:
+    # Define your MySQL users
+    users:
+      laravel: {}
+    # Define your MySQL databases and which user has access
+    databases:
+      laravel:
+        users: 
+          - laravel
+
   nginx:
     vhosts:
-      - domain: '{{ domain }}'
+      laravel:
+        domain: '{{ domain }}'
         port: 80
         php: "on"
         webroot: public
@@ -34,4 +47,4 @@ configuration:
             type: static
           - uri: '~ \.php$'
             type: fastcgi
-            to: localhost:9000
+            to: "{{ nodes.laravel.configuration.php.fpm.pool.listen }}"
