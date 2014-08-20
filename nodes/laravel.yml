@@ -39,7 +39,6 @@ configuration:
     vhosts:
       laravel:
         domain: '{{ domain }}'
-        port: 80
         php: "on"
         webroot: public
         routes:
