@@ -8,15 +8,17 @@ Build and deploy a node with an app based on the [Laravel PHP framework](http://
 
 The node is built-in with:
 
-- php 5.5; including php-fpm, composer
-- nginx; will act as the web frontend
-- sqlite; is the database
+- __php 5.5__; including php-fpm, composer
+- __nginx__; will act as the web frontend
+- __mysql__; is the database, including:
+  - a __laraval__ user (with random password)
+  - a __laraval__ database (full access to laravel db user)
 
 ## Task
 
 A build task is provided that will perform the following upon run:
 
-- clone a laravel app from Chris Sevilleja github page
+- clone a [laravel app](https://github.com/scotch-io/laravel-angular-comment-app) from Chris Sevilleja
 - run a build script that will install laravel, including the dependencies and the configuration
 
 ## Script
@@ -47,10 +49,7 @@ Refer to the [documentation](http://docs.devo.ps/manual/nodes) for more details 
 
 ## Task
 
-You will need to adapt the task definition as per your requirements:
-
-- `domain`: what domain you will use to access the application
-- other config if needed
+You may want to adapt the task definition as per your requirements.
 
 Refer to the [documentation](http://docs.devo.ps/manual/tasks) for more details about tasks.
 
