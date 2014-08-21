@@ -8,11 +8,11 @@ Build and deploy a node with an app based on the [Laravel PHP framework](http://
 
 The node is built-in with:
 
-- __php 5.5__; including php-fpm, composer
-- __nginx__; will act as the web frontend
-- __mysql__; is the database, including:
-  - a __laraval__ user (with random password)
-  - a __laraval__ database (full access to laravel db user)
+- __Nginx__; will act as the web frontend
+- __PHP 5.5__; including php-fpm, composer
+- __MySQL 5.5__; is the database, including:
+    - a __laravel__ user (with random password)
+    - a __laravel__ database (full access to laravel db user)
 
 ## Task
 
