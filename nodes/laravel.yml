@@ -37,7 +37,7 @@ configuration:
 
   nginx:
     vhosts:
-      laravel:
+      - id: laravel
         # domain: '{{ domain }}'
         webroot: public
         support: 
