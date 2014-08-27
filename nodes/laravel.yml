@@ -4,16 +4,13 @@ id: laravel
 name: Laravel node
 type: server
 
-# Define the provider details
+# Define the provider details - both location and image are optional
+# Refer to the documentation to know more about the defaults
 provider:
   name:
   size:
-  location:
-  image: ubuntu14.04
-
-vars:
-  # Define your domain name, '_' will answer to any IP
-  domain: _
+  # location:
+  # image: 
 
 services:
   php: '*'
@@ -38,7 +35,6 @@ configuration:
   nginx:
     vhosts:
       - id: laravel
-        # domain: '{{ domain }}'
         webroot: public
         support: 
           - php
