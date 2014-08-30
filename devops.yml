@@ -2,6 +2,16 @@ name: Laravel
 description: A simple boilerplate setup for your Laravel application, using NGINX, PHP-FPM and MySQL.
 image: https://raw.githubusercontent.com/laravel/art/master/laravel-four-icon.png
 vars:
-  git_url: https://github.com/scotch-io/laravel-angular-comment-app
-  provider_name: digitalocean
-  provider_size: 66
+  git_url:
+    label: App Git URL
+    default: https://github.com/scotch-io/laravel-angular-comment-app
+    description: The Git URL of the app you want to deploy
+  provider_name:
+    label: Cloud provider
+    default: digitalocean
+    description: The id of the provider you want to use, see http://docs.devo.ps/manual/nodes/#format
+  provider_size:
+    label: Server size
+    default: 66
+    description: Size of the server you will deploy your app on, see http://docs.devo.ps/providers/digitalocean/
+    
