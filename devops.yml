@@ -1,0 +1,7 @@
+name: Laravel
+description: A simple boilerplate setup for your Laravel application, using NGINX, PHP-FPM and MySQL.
+image: https://raw.githubusercontent.com/laravel/art/master/laravel-four-icon.png
+vars:
+  git_url: https://github.com/scotch-io/laravel-angular-comment-app
+  provider_name: digitalocean
+  provider_size: 66
