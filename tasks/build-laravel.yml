@@ -9,7 +9,7 @@ targets:
 
 vars:
   workdir: /var/www/laravel
-  repo: https://github.com/scotch-io/laravel-angular-comment-app
+  repo: {{ git_url }}
 
 steps:
   - run: devops git update
