@@ -1,66 +1,37 @@
 # Laravel
 
-Build and deploy a node with an app based on the [Laravel PHP framework](http://laravel.com)
+Build and deploy a simple setup for a [Laravel](http://laravel.com) app on [devo.ps](http://devo.ps).
 
-# Repo details
+## Install
 
-## Node
+Simply use the link below:
 
-The node is built-in with:
+[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devo-ps/laravel)
 
-- __Nginx__; will act as the web frontend
-- __PHP 5.5__; including php-fpm, composer
-- __MySQL 5.5__; is the database, including:
-    - a __laravel__ user (with random password)
-    - a __laravel__ database (full access to laravel db user)
+Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application.
 
-## Task
+To deploy your app, you will need to navigate to the tasks page of the repo and run the task manually (click on "play" icon, right of the "Build Laravel app" task).
 
-A build task is provided that will perform the following upon run:
+## What's in the box?
 
-- clone a [laravel app](https://github.com/scotch-io/laravel-angular-comment-app) from Chris Sevilleja
-- run a build script that will install laravel, including the dependencies and the configuration
+This setup contains one server (`nodes/laravel.yml`) with **Nginx**, **PHP 5.5** (with php-fpm and composer) and **MySQL 5.5** (with a "laravel" user and a "larvel" database)
 
-## Script
+We have included as well a task (`tasks/build-laravel.yml`) that:
 
-A simple bash script is provided to perform the basic build of the laravel app, including:
+1. Clone your laravel app from GitHub (set to [scotch-io/laravel-angular-comment-app](https://github.com/scotch-io/laravel-angular-comment-app) by default).
+1. Run a build script (`scripts/build-laravel.sh`) that will:
+  1. Install laravel via composer, using the `composer.json` file if found,
+  1. Write the configuration file (to connect it to MySQL),
+  1. Migrate and seed the database with sample data.
 
-- install laravel via composer, using the `composer.json` file if found
-- configure the database
-- migrate and seed the database with sample data
+The current repo provides a very simple setup. Hack at will!
 
-This script is easily customizable to include more tuning and changes of configuration as per your app requirements.
+## Questions?
 
-# Install
-
-To provision the node, you need to activate your repository at https://app.devo.ps/#/user/laravel/settings.
-
-But before enabling the repository, you will need to perform some changes in the provided node and task definitions.
-
-## Node
-
-You will need to specify in the node definition:
-
-- the provider details; `name`, `size` and `location` - you need to have the provider defined in your profile
-- extra packages to install on the server
-- extra configuration of the installed services
-
-Refer to the [documentation](http://docs.devo.ps/manual/nodes) for more details about nodes.
-
-## Task
-
-You may want to adapt the task definition as per your requirements.
-
-Refer to the [documentation](http://docs.devo.ps/manual/tasks) for more details about tasks.
-
-# Customization
-
-The current repo provides a simple app, it needs to be customized to run as per your requirements / code. You may consider the following:
-
-- use your own github repository with your own application code
-- update the build script to perform more setup (e.g. configuration file, api keys, etc.)
-- update the task itself to define other variables / commands to run on build
+If you have any question, come ask us on the [devo.ps chat](https://www.hipchat.com/gyHEHtsXZ) or shoot us an email at [help@devo.ps](mailto:help@devo.ps) (though, you should really just [ask us in the chat](https://www.hipchat.com/gyHEHtsXZ)).
 
 # Reference
 
 - [Laravel tutorial](http://scotch.io/tutorials/php/create-a-laravel-and-angular-single-page-comment-application) from [Chris Sevilleja](http://scotch.io/author/chris)
+- [Nodes in devo.ps](http://docs.devo.ps/manual/nodes)
+- [Tasks in devo.ps](http://docs.devo.ps/manual/tasks)
