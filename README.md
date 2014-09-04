@@ -6,7 +6,7 @@ Build and deploy a simple setup for a [Laravel](http://laravel.com) app on [devo
 
 Simply use the link below:
 
-[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devo-ps/laravel)
+[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devops-community/laravel)
 
 Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application.
 
