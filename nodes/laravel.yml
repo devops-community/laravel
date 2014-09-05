@@ -25,10 +25,10 @@ configuration:
   mysql:
     # Define your MySQL users
     users:
-      laravel: {}
+      - name: laravel
     # Define your MySQL databases and which user has access
     databases:
-      laravel:
+      - name: laravel
         users: 
           - laravel
 
