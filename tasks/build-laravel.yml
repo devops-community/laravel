@@ -9,12 +9,11 @@ targets:
 
 vars:
   workdir: /var/www/laravel
-  repo: "{{ git_url }}"
 
 steps:
   - run: devops git update
     options:
-      repo: '{{ repo }}'
+      repo: '{{ git_url }}'
       dest: '{{ workdir }}'
 
   - run: devops scripts/build-laravel.sh
