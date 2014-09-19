@@ -7,6 +7,11 @@ type: task
 targets:
   - laravel
 
+# Uncomment the following to add a deploy webhook; you may want to obfuscate the URL as this is public
+#triggers:
+#  webhooks:
+#    - path: deploy
+
 vars:
   workdir: /var/www/laravel
 
