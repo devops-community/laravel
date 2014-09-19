@@ -1,5 +1,5 @@
 name: Laravel
-description: A simple boilerplate setup for your Laravel application, using NGINX, PHP-FPM and MySQL.
+description: A boilerplate setup for your Laravel app (NGINX, PHP-FPM and MySQL).
 image: https://raw.githubusercontent.com/devo-ps/laravel/master/laravel-logo.png
 vars:
   git_url:
