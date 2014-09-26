@@ -36,8 +36,7 @@ configuration:
     vhosts:
       - id: laravel
         webroot: public
-        support: 
-          - php
+        indexes: index.php
         routes:
           - uri: '/'
             type: static
