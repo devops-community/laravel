@@ -1,6 +1,6 @@
 name: Laravel
 description: A boilerplate setup for your Laravel app (NGINX, PHP-FPM and MySQL).
-image: https://raw.githubusercontent.com/devo-ps/laravel/master/laravel-logo.png
+image: https://raw.githubusercontent.com/devops-community/laravel/master/laravel-logo.png
 vars:
   git_url:
     label: App Git URL
