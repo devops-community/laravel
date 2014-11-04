@@ -8,9 +8,11 @@ targets:
   - laravel
 
 # Uncomment the following to add a deploy webhook; you may want to obfuscate the URL as this is public
-#triggers:
+triggers:
 #  webhooks:
 #    - path: deploy
+  events:
+    - node.laravel.create.success
 
 vars:
   workdir: /var/www/laravel
