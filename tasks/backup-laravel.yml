@@ -1,0 +1,30 @@
+# Find out more about tasks: http://docs.devo.ps/manual/tasks
+
+id: backup-laravel
+name: Backup Laravel
+type: task
+
+targets:
+  - laravel
+
+triggers:
+  crons:
+    # At 4am every day
+    - '0 4 * * *'
+  webhooks: 
+    - path: backup/laravel
+
+vars:
+  workdir: /var/www/laravel
+
+steps:
+  # Backup the MySQL drupal database and workdir
+  - run: devops backup run
+    options:
+      path: '/opt/backup/%Y/%m/%d/%H-%M/laravel'
+      files:
+        - '{{ workdir }}'
+      mysql_dbs:
+        - laravel
+
+  # All the backups are available in /opt/backup/YYYY/MM/DD/HH-MM/laravel

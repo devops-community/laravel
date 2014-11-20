@@ -14,4 +14,3 @@ vars:
     label: Server size
     default: 66
     description: Size of the server you will deploy your app on, see http://docs.devo.ps/providers/digitalocean/
-    

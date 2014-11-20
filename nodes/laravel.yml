@@ -13,11 +13,19 @@ provider:
   # image: 
 
 services:
+  backup: '*'
   php: '*'
   nginx: '*'
   mysql: '*'
 
 configuration:
+  # backup:
+  #   # Define local cron to run the backup
+  #   schedules:
+  #     - '0 3 * * *'
+  #   # And save the archive in a "daily" folder
+  #   path: '/opt/backup/%Y/%m/%d/daily'
+
   php:
     composer: true
     memory_limit: 512M
