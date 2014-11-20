@@ -18,7 +18,7 @@ vars:
   workdir: /var/www/laravel
 
 steps:
-  # Backup the MySQL drupal database and workdir
+  # Backup the MySQL laravel database and workdir
   - run: devops backup run
     options:
       path: '/opt/backup/%Y/%m/%d/%H-%M/laravel'
